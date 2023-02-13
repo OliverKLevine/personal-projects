@@ -8,6 +8,10 @@ Next step: parse the text string in each Paper object to a list of Reference obj
 - This list should be global (ie if the same paper is referenced in two different papers, only one reference object should be created for it, storing its association with both papers that cited it.)
 - Should this be the same object as Paper?
     - Should I pass it the first page so it can figure out its own reference? Go looking for reference in Zotero?
+        - Yes, this will probably be needed to get title, author firstnames, etc.
+
+Desired features:
+- Author object that can contain refs to all papers published under their name, and authorship order (identify people who are Big NamesTM)
 '''
 
 import sys
