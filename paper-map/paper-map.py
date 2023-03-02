@@ -12,6 +12,8 @@ Next step: parse the text string in each Paper object to a list of Reference obj
 
 Desired features:
 - Author object that can contain refs to all papers published under their name, and authorship order (identify people who are Big NamesTM)
+
+text files wtf
 '''
 
 import sys
