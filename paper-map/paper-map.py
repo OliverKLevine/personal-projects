@@ -21,75 +21,84 @@ from multiprocessing import Pool
 import numpy as np
 import time
 
-pdf_dir = os.getcwd()
-slash = "/"
-if("\\" in pdf_dir): slash = "\\"
-pdf_dir = pdf_dir[:pdf_dir.index("Users")+6+pdf_dir[pdf_dir.index("Users")+6:].index(slash)]
-
-zotero = True
-
-if(zotero): pdf_dir += "/Zotero/Storage/"
-else: pass
-
-print(pdf_dir)
-
 class Paper:
     def __init__(self, name, text):
         self.name = name
         self.text = text
 
-pdf_paths = []
-for (dir_path, dir_names, file_names) in os.walk(pdf_dir):
-    for file in file_names:
-        if(file[len(file)-4:] == ".pdf"):
-            pdf_paths.append(dir_path+slash+file)
-
 def read_pdf(pathlist):
-    papers = []
+    print(len(pathlist))
+    text_files_path = "./text_files"
     for path in pathlist:
-        f = open(path, "rb")
-        pdf = PyPDF2.PdfFileReader(f,strict=False)
-        pagecount = pdf.numPages
-        string = ""
-        references = True
-        for x in range(pagecount-1,0,-1):
-            pagetext = pdf.getPage(x).extractText()
-            if("References" in pagetext):
-                string = pagetext[pagetext.index("References"):] + string
-                break
-            else: string = pagetext + string
-        papers.append(Paper(file[:len(file)-4],string))
-        f.close()
-    return(papers)
+        with open(path, "rb") as f:
+            pdf = PyPDF2.PdfFileReader(f,strict=False)
+            pagecount = pdf.numPages
+            string = ""
+            for x in range(0,pagecount):
+                string += pdf.getPage(x).extractText()
+            txt_path = os.path.basename(path)
+            txt_path = os.path.join(text_files_path,txt_path[:txt_path.rindex(".")] + ".txt")
+            with open(txt_path,"w") as out_file:
+                out_file.write(string)
 
-papers = []
-'''for pdf in progressBar(pdf_paths, prefix = 'Progress:', suffix = 'Complete', length = 50):
-    papers.append(read_pdf(pdf))'''
+def main():
 
-num_p = 4
-'''Note 2/7/23: 
-    With my current Zotero library, the ideal number of processes is 4:
-    # processes:time(s), one trial each:
-    - ['1:9.793448099999296', '2:5.566195700000208', '3:3.867462300000625', '4:2.8168375000004744', '5:2.91246080000019', '6:2.8354879000007713', '7:2.913536699999895', '8:2.958448400000634', '9:2.8906716999999844', '10:2.891614999999547', '11:2.9242064000000028', '12:2.858286499999849', '13:2.8211081999997987', '14:2.8489654999993945', '15:3.071777699999984', '16:3.0568671999999424', '17:3.097930599999927', '18:3.139920399999937', '19:3.1246350000001257', '20:3.0756861999998364']
-    
-    Remember to recheck occasionally. check with:
-        def trial(num_p,p_input):
-            start = time.perf_counter()
-            with Pool(num_p) as p:
-                papers = p.map(read_pdf, p_input)
-                pass
-            finish = time.perf_counter()
-            return(finish-start)
+    directories = {}
+    directories["pdf"] = os.getcwd()
+    directories["txt"] = os.path.join(directories["pdf"],"text_files")
+    slash = "/"
+    if("\\" in directories["pdf"]): slash = "\\"
+    directories["pdf"] = directories["pdf"][:directories["pdf"].index("Users")+6+directories["pdf"][directories["pdf"].index("Users")+6:].index(slash)]
 
-        processing = []
-        for x in range(1,21):
-            processing.append(str(x) + ":" +str(trial(x, p_input)))
-            print(processing[len(processing)-1])
+    zotero = True
 
-        print(processing)
-    '''
-p_input = np.array_split(pdf_paths,num_p)
-with Pool(num_p) as p:
-    papers = p.map(read_pdf, p_input)
-papers = [paper for sublist in papers for paper in sublist]
+    if(zotero): directories["pdf"] += "/Zotero/Storage/"
+    else: pass
 
+    print(directories["pdf"])
+
+    file_paths = {}
+    for type in directories:
+        for (dir_path, dir_names, file_names) in os.walk(directories[type]):
+            for file in file_names:
+                if(file[file.rindex(".")+1:] == type):
+                    if not file[:file.rindex(".")] in file_paths: file_paths[file[:file.rindex(".")]] = {}
+                    file_paths[file[:file.rindex(".")]][type] = dir_path+slash+file
+
+    untranslated = [file_paths[i]["pdf"] for i in file_paths if "txt" not in file_paths[i]]
+
+    print(untranslated)
+
+    papers = []
+    '''for pdf in progressBar(pdf_paths, prefix = 'Progress:', suffix = 'Complete', length = 50):
+        papers.append(read_pdf(pdf))'''
+
+    num_p = 4
+    '''Note 2/7/23: 
+        With my current Zotero library, the ideal number of processes is 4:
+        # processes:time(s), one trial each:
+        - ['1:9.793448099999296', '2:5.566195700000208', '3:3.867462300000625', '4:2.8168375000004744', '5:2.91246080000019', '6:2.8354879000007713', '7:2.913536699999895', '8:2.958448400000634', '9:2.8906716999999844', '10:2.891614999999547', '11:2.9242064000000028', '12:2.858286499999849', '13:2.8211081999997987', '14:2.8489654999993945', '15:3.071777699999984', '16:3.0568671999999424', '17:3.097930599999927', '18:3.139920399999937', '19:3.1246350000001257', '20:3.0756861999998364']
+        
+        Remember to recheck occasionally. check with:
+            def trial(num_p,p_input):
+                start = time.perf_counter()
+                with Pool(num_p) as p:
+                    papers = p.map(read_pdf, p_input)
+                    pass
+                finish = time.perf_counter()
+                return(finish-start)
+
+            processing = []
+            for x in range(1,21):
+                processing.append(str(x) + ":" +str(trial(x, p_input)))
+                print(processing[len(processing)-1])
+
+            print(processing)
+        '''
+    p_input = np.array_split(untranslated,num_p)
+    with Pool(num_p) as p:
+        p.map(read_pdf, p_input)
+    print("done")
+
+if __name__ == "__main__":
+    main()
