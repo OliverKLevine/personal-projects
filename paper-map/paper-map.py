@@ -18,7 +18,7 @@ text files wtf
 
 import sys
 import os
-import PyPDF2
+import aspose.words as aw
 from multiprocessing import Pool
 import numpy as np
 import time
@@ -29,78 +29,44 @@ class Paper:
         self.text = text
 
 def read_pdf(pathlist):
-    print(len(pathlist))
     text_files_path = "./text_files"
     for path in pathlist:
-        with open(path, "rb") as f:
-            pdf = PyPDF2.PdfFileReader(f,strict=False)
-            pagecount = pdf.numPages
-            string = ""
-            for x in range(0,pagecount):
-                string += pdf.getPage(x).extractText()
-            txt_path = os.path.basename(path)
-            txt_path = os.path.join(text_files_path,txt_path[:txt_path.rindex(".")] + ".txt")
-            with open(txt_path,"w") as out_file:
-                out_file.write(string)
+        doc = aw.Document(path)
+        doc.save(text_files_path + path[path.rindex("/")+1:path.rindex(".")] + ".md")
+
 
 def main():
 
-    directories = {}
-    directories["pdf"] = os.getcwd()
-    directories["txt"] = os.path.join(directories["pdf"],"text_files")
+    file_dirs = {}
+    file_dirs["pdf"] = os.path.expanduser("~")
+    file_dirs["md"] = os.path.join(os.getcwd(),"text_files")
     slash = "/"
-    if("\\" in directories["pdf"]): slash = "\\"
-    directories["pdf"] = directories["pdf"][:directories["pdf"].index("Users")+6+directories["pdf"][directories["pdf"].index("Users")+6:].index(slash)]
+    if("\\" in file_dirs["md"]): slash = "\\"
 
     zotero = True
 
-    if(zotero): directories["pdf"] += "/Zotero/Storage/"
+    if(zotero): file_dirs["pdf"] += "/Zotero/storage"
     else: pass
 
-    print(directories["pdf"])
+    #print(file_dirs["pdf"])
 
     file_paths = {}
-    for type in directories:
-        for (dir_path, dir_names, file_names) in os.walk(directories[type]):
+    for file_type in file_dirs:
+        for (dir_path, dir_names, file_names) in os.walk(file_dirs[file_type]):
+            print((dir_path,dir_names,file_names))
             for file in file_names:
-                if(file[file.rindex(".")+1:] == type):
+                if(file[file.rindex(".")+1:] == file_type):
                     if not file[:file.rindex(".")] in file_paths: file_paths[file[:file.rindex(".")]] = {}
-                    file_paths[file[:file.rindex(".")]][type] = dir_path+slash+file
+                    file_paths[file[:file.rindex(".")]][file_type] = dir_path+slash+file
 
     untranslated = [file_paths[i]["pdf"] for i in file_paths if "txt" not in file_paths[i]]
 
     print(untranslated)
+    
+    for file in untranslated:
+        doc = aw.Document(file)
+        doc.save(file_paths["md"] + file[file.rindex("/")+1:file.rindex(".")] + ".md")
 
-    papers = []
-    '''for pdf in progressBar(pdf_paths, prefix = 'Progress:', suffix = 'Complete', length = 50):
-        papers.append(read_pdf(pdf))'''
-
-    num_p = 4
-    '''Note 2/7/23: 
-        With my current Zotero library, the ideal number of processes is 4:
-        # processes:time(s), one trial each:
-        - ['1:9.793448099999296', '2:5.566195700000208', '3:3.867462300000625', '4:2.8168375000004744', '5:2.91246080000019', '6:2.8354879000007713', '7:2.913536699999895', '8:2.958448400000634', '9:2.8906716999999844', '10:2.891614999999547', '11:2.9242064000000028', '12:2.858286499999849', '13:2.8211081999997987', '14:2.8489654999993945', '15:3.071777699999984', '16:3.0568671999999424', '17:3.097930599999927', '18:3.139920399999937', '19:3.1246350000001257', '20:3.0756861999998364']
-        
-        Remember to recheck occasionally. check with:
-            def trial(num_p,p_input):
-                start = time.perf_counter()
-                with Pool(num_p) as p:
-                    papers = p.map(read_pdf, p_input)
-                    pass
-                finish = time.perf_counter()
-                return(finish-start)
-
-            processing = []
-            for x in range(1,21):
-                processing.append(str(x) + ":" +str(trial(x, p_input)))
-                print(processing[len(processing)-1])
-
-            print(processing)
-        '''
-    p_input = np.array_split(untranslated,num_p)
-    with Pool(num_p) as p:
-        p.map(read_pdf, p_input)
-    print("done")
 
 if __name__ == "__main__":
     main()
