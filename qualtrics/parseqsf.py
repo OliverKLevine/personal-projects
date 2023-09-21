@@ -2,22 +2,18 @@ import os
 import sys
 import json
 
-def main(qsf_json, blank_qsf, out_qsf, switch = False):
-    if switch:
-        qsf_json, out_qsf = out_qsf, qsf_json
-    with open(qsf_json, "r") as input:
+def main(blank_qsf, input_questions, out_qsf = False, keep_questions = False):
+    if not out_qsf: out_qsf = blank_qsf
+    with open(blank_qsf, "r") as input:
         qsf = json.load(input)
+    if not keep_questions:
+        
     
-    if not switch:
-        qsf["SurveyEntry"]["SurveyID"] = "SV_cHXMOV5X1K2nWgm"
-        for x in range(len(qsf["SurveyElements"])-1,-1,-1):
-            qsf["SurveyElements"][x]["SurveyID"] = "SV_cHXMOV5X1K2nWgm"
+    with open(out_qsf,"w") as output:
+        json.dump(qsf, output)
     
-        with open(out_qsf,"w") as output:
-            json.dump(qsf, output)
-    else:
-        with open(out_qsf,"w") as output:
-            json.dump(qsf, output, indent=4)
+
+    
 
 def qsf_to_json(qsf_in, json_out):
     with open(qsf_in,"r") as input:
