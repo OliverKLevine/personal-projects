@@ -13,7 +13,7 @@
         "SurveyExpirationDate": "0000-00-00 00:00:00",
         "SurveyCreationDate": "2023-09-05 13:33:48",
         "CreatorID": "UR_82hSeBo3AjuxM5U",
-        "LastModified": "2023-11-06 14:30:40",
+        "LastModified": "2023-11-06 16:18:50",
         "LastAccessed": "0000-00-00 00:00:00",
         "LastActivated": "0000-00-00 00:00:00",
         "Deleted": null
@@ -54,6 +54,10 @@
                         {
                             "Type": "Question",
                             "QuestionID": "QID6"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID7"
                         }
                     ]
                 },
@@ -169,7 +173,7 @@
             "SurveyID": "SV_8uYCLiVlYVfp0Ee",
             "Element": "QC",
             "PrimaryAttribute": "Survey Question Count",
-            "SecondaryAttribute": "6",
+            "SecondaryAttribute": "7",
             "TertiaryAttribute": null,
             "Payload": null
         },
@@ -203,6 +207,35 @@
                     "AllowFreeResponse": "false"
                 },
                 "QuestionID": "QID6"
+            }
+        },
+        {
+            "SurveyID": "SV_8uYCLiVlYVfp0Ee",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID7",
+            "SecondaryAttribute": "Click to write the question text",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Click to write the question text",
+                "DefaultChoices": false,
+                "DataExportTag": "Q7",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Click to write the question text",
+                "ChoiceOrder": [],
+                "Validation": {
+                    "Settings": {
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID7"
             }
         },
         {

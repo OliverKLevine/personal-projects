@@ -101,8 +101,7 @@ class Survey:
         def __init__(self, survey,block_info,question_text):
             self.survey = survey
             question_types = question_text.split("]]")[0].split(":")
-            if question_types[0] == "ConstantSum": question_types[0] = "CS"
-            qtype = question_types[0]
+            qtype = {"MC":"MC","TE":"TE","CS":"CS","ConstantSum":"CS","Slider":"Slider","Text":"DB"}[question_types[0]]
 
             self.count = survey.count.plus()
             self.name = question_text.split("\n")[1].strip()
@@ -111,7 +110,8 @@ class Survey:
                 "TE": {True:"SL",False:"ML"}["Short" in question_types],
                 "Matrix":"Likert",
                 "Slider":"HSLIDER",
-                "CS":"VRTL"
+                "CS":"VRTL",
+                "DB":"TB"#left off here
             }
             configurations = {
                 "MC":{"QuestionDescriptionOption": "UseText"},
@@ -164,19 +164,34 @@ class Survey:
                     "QuestionID":f"QID{self.count}"
                 }
             }
+            self.Payload = getdict(self.info,["Payload"])
+            if qtype == "CS": self.Payload["SubSelector"] = "TX"
 
             if "[[Choices]]" in question_text:
                 choices = [choice.strip() for choice in question_text.split("[[Choices]]")[1].split("[[")[0].split("\n") if choice.strip()]
+                choice_dict = {}
+                orders = []
+                for x in range(len(choices)):
+                    choice_dict[str(x+1)] = {"Display":choices[x]}
+                    orders.append(str(x+1))
+                self.Payload["Choices"] = choice_dict
+                self.Payload["ChoiceOrder"] = orders
+
             if "[[Answers]]" in question_text:
                 answers = [answer.strip() for answer in question_text.split("[[Answers]]")[1].split("[[")[0].split("\n") if answer.strip()]
-
-            self.Payload = getdict(self.info,["Payload"])
-            if qtype == "CS": self.Payload["SubSelector"] = "TX"
+                answer_dict = {}
+                orders = []
+                for x in range(len(answers)):
+                    answer_dict[str(x+1)] = {"Display":answers[x]}
+                    orders.append(str(x+1))
+                self.Payload["Answers"] = answer_dict
+                self.Payload["AnswerOrder"] = orders
 
             self.block_info = {
                 "Type":"Question",
                 "QuestionID":self.PrimaryAttribute
             }
+            self.survey.elements.append(self.info)
 
         def extract(self):
             return self.info
