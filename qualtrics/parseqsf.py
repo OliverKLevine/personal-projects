@@ -53,6 +53,7 @@ class Survey:
 
         with open(input_questions,"r") as input:
             text = input.read()
+            text = "\n".join([line for line in text.split("\n") if not line[:2] == "#?"])
 
         text = text.split("[[Block:")[1:]
         for block in text:
