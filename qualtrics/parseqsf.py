@@ -7,7 +7,7 @@ This program will parse those questions and write them in a .qsf format (which i
 If you don't specify an output file path (third arg) it will make a new file replacing the .txt with .qsf in the questions input.
 
 """
-
+import os
 import sys
 import json
 
@@ -268,7 +268,10 @@ class Survey:
 
 
 def main(blank_qsf, input_questions, out_qsf = False):
+    blank_qsf = os.path.expanduser(blank_qsf)
+    input_questions = os.path.expanduser(input_questions)
     if not out_qsf: out_qsf = input_questions.replace(".txt",".qsf")
+    else: out_qsf = os.path.expanduser(out_qsf)
     
     survey = Survey(blank_qsf, input_questions, False)
 
