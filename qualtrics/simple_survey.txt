@@ -1,0 +1,7 @@
+[[Block:Student Info]]
+
+[[Question:MC]]
+Are you a PhD student or a Master's student?
+[[Choices]]
+PhD
+Master's

@@ -1,1 +1,750 @@
-/Users/hkg58926/Documents/BIGSA/gsss/gsss_questions.txt
+[[AdvancedFormat]]
+
+[[Block:Instructions]]
+
+[[Question:Text]]
+**Instructions here**
+
+[[Block:Student Info]]
+
+[[Question:MC]]
+Are you a PhD student or a Master's student?
+[[Choices]]
+PhD
+Master's
+
+[[Question:MC]]
+What year did you start your current degree program at UGA (not in IOB specifically)?
+[[Choices]]
+2023
+2022
+2021
+2020
+2019
+2018
+2017
+2016 or before
+
+[[Question:MC]]
+If you are a PhD student, have you completed your qualifying exams?
+[[Choices]]
+Yes
+No
+N/A
+
+[[Question:MC]]
+Are you an international student?
+[[Choices]]
+Yes
+No
+Prefer not to answer
+
+[[Question:MC]]
+Is English your native language?
+[[Choices]]
+Yes
+No
+Prefer not to answer
+
+[[Block: Recruitment]]
+
+[[Question:MC]]
+How were you recruited/admitted to IOB?
+[[Choices]]
+Through ILS
+Through IPS
+Direct admission
+Other (specify below) 
+
+
+[[Question:Matrix]]
+How well were program expectations (eg registration, class requirements, etc) explained to you by the department?
+[[Choices]]
+Before you joined
+After joining
+[[Answers]]
+1-Very Poorly
+2-Poorly
+3-Acceptably
+4-Well
+5-Very Well
+
+[[Question:MC:MultipleAnswer]]
+Why did you join the Institute of Bioinformatics?
+[[Choices]]
+My PI suggested it
+Expected degree for my future career
+Course requirements
+Milestone timeline (eg graduation, comprehensive exams)
+Comprehensive exam format
+Reccomendation from current students/faculty
+General department/community
+Other (specify below) 
+
+
+
+[[Question:MC]]
+When did you begin to consider joining the Institute of Bioinformatics at UGA?
+[[Choices]]
+Before applying to UGA
+During ILS/IPS interviews
+After being accepted to UGA but before the fall semester
+During ILS/IPS fall semester welcome events
+During rotations
+Other (specify below)
+
+
+
+[[Question:MC]]
+When did you discover the lab you ended up joining?
+[[Choices]]
+Before applying to UGA
+During ILS/IPS interviews
+After being accepted to UGA but before the fall semester
+During ILS/IPS fall semester welcome events
+During rotations
+Other (specify below)
+
+
+
+[[Question:TE]]
+If you have any other comments or suggestions about recruitment, please provide them below.
+
+[[Block:Overall Satisfaction]]
+
+[[Question:Matrix]]
+How often has each of these caused you distress in the past year?
+[[Choices]]
+Work-life balance
+Career path
+Personal financial issues
+Grant funding
+Availability of desired career positions
+Uncertainty about value of degree
+Transitioning to future career
+Physical health
+Mental health
+Political landscape
+Imposter syndrome
+Missing home/Culture shock
+Other
+[[Answers]]
+1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always
+
+[[Question:MC:MultipleAnswer]]
+Which of the following factors have led you to consider leaving your graduate program in the past year (if any)?
+[[Choices]]
+N/A, I didn't consider leaving my graduate program in the past year.
+Work-life balance
+Career path
+Personal financial issues
+Grant funding
+Availability of desired career positions
+Uncertainty about value of degree
+Transitioning to future career
+Physical health
+Mental health
+Political landscape
+Imposter syndrome
+Missing home/Culture shock
+Other
+
+
+[[Question:Matrix]]
+In the last year, how satisfied have you been with each of the following aspects of your degree program?
+[[Choices]]
+Quality of graduate coursework
+Professional relationship with dissertation advisor
+Departmental career development opportunities
+Level of financial support
+Communication within IOB
+Stipend covering living expenses
+Infrastructure (Sapelo2, accessibility to space, equipment, etc)
+Interpersonal relationships with peers in IOB
+Other (specify below)
+[[Answers]]
+1-Very Dissatisfied
+2-Dissatisfied
+3-Neither Dissatisfied nor Satisfied
+4-Satisfied
+5-Very Satisfied
+
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Horizontal]]
+Rate your agreement with the following statement: I feel like I belong in the Institute of Bioinformatics (IOB).
+[[Choices]]
+1-Strongly Disagree
+2-Disagree
+3-Neither Agree or Disagree
+4-Agree
+5-Strongly Agree
+
+[[Question:Matrix]]
+In the last year, how often have you felt that your contributions are valued...
+[[Choices]]
+in your lab.
+among other graduate students.
+in the Institute of Bioinformatics (IOB).
+at UGA.
+[[Answers]]
+1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Alwayss
+
+[[Question:MC]]
+Are you aware of departmental procedure for reporting harassment, discrimination, or other forms of unethical conduct?
+[[Choices]]
+Yes, and I would feel comfortable using them
+Yes, but I wouldn't feel comfortable using them
+No
+Unsure
+
+[[Question:Matrix]]
+How comfortable would you feel with reporting an incident of harassment, discrimination, or other forms of unethical conduct to each of the following?
+[[Choices]]
+My PI
+My committee
+The director of IOB
+Faculty graduate coordinator
+Other PIs in IOB
+IOB staff
+Other graduate students
+[[Answers]]
+1-Very Uncomfortable
+2-Uncomfortable
+3-Neither Uncomfortable or Comfortable
+4-Comfortable
+5-Very Comfortable
+
+[[PageBreak]]
+
+[[Question:Text]]
+UGA defines discrimination as:
+Decision-making based on race, color, sex (including pregnancy), sexual orientation, gender identity, ethnicity or national origin, religion, age, genetic information, disability, or veteran status.
+(https://eoo.uga.edu/policies/non-discrimination-anti-harassment-policy)
+ 
+If you have experienced harassment or discrimination in IOB please consider reporting this to your PI, one of your committee members, or the graduate coordinator. See IOB reporting procedure <a href=https://iob.uga.edu/diversity/#.ZD8CJOzMKBQ>here</a>.
+
+If you have experienced harassment or discrimination at UGA and do not want to report using departmental procedure please consider contacting the UGA Compliance, Ethics and Reporting hotline <a href=https://legal.uga.edu/guidance/compliance-ethics-reporting-hotline>here</a>.
+
+If you have experience sexual harassment you can seek help and guidance with the <a href=https://healthcenter.uga.edu/who-should-i-talk-to/>Relationship and Sexual Violence Prevention (RSVP) Office at the University Health Center</a>.
+
+If you have experienced harassment or discrimination and are unsure what resources are appropriate, you can <a href=https://eoo.uga.edu/Meet-the-Ombudspersons/>contact a UGA ombudsperson</a>. Ombudspersons are designated individuals who serve as independent, neutral and informal resources for UGA students, faculty and staff.
+
+[[Question:Matrix]]
+In the last year, how often have you felt discriminated against at this university because of each of the personal characteristics below?
+[[Choices]]
+Race/Ethnicity
+Gender
+Sexual orientation
+Religion
+Age
+Accent/dialect
+National origin
+Disability
+Socioeconomic/income level
+Veteran status
+[[Answers]]
+1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always
+
+[[PageBreak]]
+
+[[Question:MC:SingleAnswer:Horizontal]]
+Knowing what you know now, how likely would you be to join IOB again?
+[[Choices]]
+1-Very Unlikely
+2-Unlikely
+3-Neutral
+4-Likely
+5-Very Likely
+
+[[Question:MC:SingleAnswer:Horizontal]]
+Knowing what you know now, how likely would you be to join a UGA graduate program again?
+[[Choices]]
+1-Very Unlikely
+2-Unlikely
+3-Neutral
+4-Likely
+5-Very Likely
+
+[[Question:MC:SingleAnswer:Horizontal]]
+Knowing what you know now, how likely would you be to join the same lab?
+[[Choices]]
+1-Very Unlikely
+2-Unlikely
+3-Neutral
+4-Likely
+5-Very Likely
+
+[[Question:Matrix]]
+Please rate your satisfaction with the following aspects of your lab:
+[[Choices]]
+Relationship with PI
+Relationship with other members of the lab
+Lab culture and dynamics
+Funding
+Research topic
+Day-to-day research experience
+Communication and expectations
+Conferences, travel, and networking opportunities
+Training opportunities (internships, workshops, etc)
+Time for coursework and degree requirements (proposal writing, etc)
+Time for outreach activities and student organizations
+Access to equipment, software, and other resources
+Lab/office space
+Other (specify below)
+[[Answers]]
+1-Very Dissatisfied
+2-Dissatisfied
+3-Neither Dissatisfied nor Satisfied
+4-Satisfied
+5-Very Satisfied
+
+[[Question:Matrix]]
+How satisfied are you with the following aspects of IOB at UGA?
+[[Choices]]
+Graduate school experience
+Living in Athens
+IOB program, compared to bioinformatics programs at other universities
+IOB, compared to other UGA departments and institutes
+IOB coursework
+Interactions with students and faculty
+Other (specify below)
+[[Answers]]
+1-Very Dissatisfied
+2-Dissatisfied
+3-Neither Dissatisfied nor Satisfied
+4-Satisfied
+5-Very Satisfied
+
+
+[[Question:Matrix]]
+Please rate your agreement with the following statements about your progress toward degree completion.
+[[Choices]]
+I am aware of the requirements of the graduate program to graduate
+I feel confident I will graduate
+I have a timeline for my graduation
+I am confident that my career prospects are good
+I will be prepared for a career when I receive my degree
+I have seriously considered leaving the program
+[[Answers]]
+1-Strongly Disagree
+2-Disagree
+3-Neutral
+4-Agree
+5-Strongly Agree
+N/A
+
+[[Question:TE]]
+If you have feedback about your general satisfaction about your degree program with IOB, or anything IOB could do to improve your experience, please share it below. 
+
+[[PageBreak]]
+
+[[Question:Matrix]]
+How often do you make use of the following resources when looking for information on how to navigate the graduate program or resolve non-research issues you are facing?
+[[Choices]]
+Fellow graduate students
+Advisor/PI
+IOB staff
+Faculty Graduate Coordinator
+Your thesis committee
+Other faculty
+Course materials (eg BINF 8001)
+UGA websites (graduate school, health center, others)
+General internet search
+IOB website/student handbook
+Other (specify below)
+[[Answers]]
+1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always
+
+
+
+[[Block:Mentoring]]
+
+[[Question:MC]]
+In the last year, how frequently have you interacted with your research advisor in a meaningful way?
+[[Choices]]
+Two or more times per week
+Weekly
+A few times a month
+A few times a semester
+Only a couple times this year
+
+[[Question:Matrix]]
+Please rate your satisfaction with your research advisor regarding the following aspects of the graduate program in the past year.
+[[Choices]]
+Research project development
+Development opportunities
+Work-life balance
+[[Answers]]
+1-Very Dissatisfied
+2-Dissatisfied
+3-Neither Dissatisfied nor Satisfied
+4-Satisfied
+5-Very Satisfied
+
+
+[[Question:Matrix]]
+Please rate your agreement with the following statements based on your interactions with your PI in the past year.
+[[Choices]]
+I have a good relationship with my advisor.
+I do not feel valued / respected by my advisor.
+My advisor respects my cultural/ethnic/socioeconomic background.
+My advisor supports my academic goals.
+My advisor supports my professional goals.
+My advisor communicates clear expectations for things to accomplish before our next meeting.
+My advisor's expectations are reasonable.
+My advisor and I meet frequently enough, and they are available when I need them.
+My advisor gives me autonomy over my research topic, goals, and milestones.
+My advisor positively impacts my mental and emotional well-being.
+If I were experiencing physical health challenges, I would feel comfortable asking my adviser for time off.
+If I were experiencing mental health challenges, I would feel comfortable asking my adviser for time off.
+My advisor provides adequate support in learning the techniques/protocols involved in my research.
+I feel comfortable advocating for myself when interacting with my advisor.
+My advisor respects my input on workstyle (e.g. working hours, working from home)
+My advisor respects my input on the lab and our working relationship.
+My advisor is receptive to my needs as a person, not just a researcher.
+[[Answers]]
+1-Strongly Disagree
+2-Disagree
+3-Neither Agree or Disagree
+4-Agree
+5-Strongly Agree
+N/A or Prefer Not to Answer
+
+[[Question:TE]]
+If you have feedback about the mentorship you have received from your PI during your graduate program, please share it below.
+
+[[Question:Matrix]]
+Your committee meetings over the past year have been valuable for...
+[[Choices]]
+Research Development
+Career Development
+Presentation Skills
+Resolving conflict or disagreement with my advisor
+[[Answers]]
+1-Strongly Disagree
+2-Disagree
+3-Neither Agree or Disagree
+4-Agree
+5-Strongly Agree
+N/A
+
+
+[[Question:TE]]
+If you have additional feedback about the mentorship you have received, please share it here.
+
+[[Block:Coursework]]
+
+[[Question:MC]]
+Have you completed an IOB course in the past year?
+[[Choices]]
+Yes
+No
+
+[[Question:Matrix]]
+Please rate your agreement with the following statements:
+[[Choices]]
+The IOB core curriculum has challenged me to think critically about bioinformatics.
+The IOB core curriculum included enough background in biological concepts.
+The IOB core curriculum included enough background in computational skills.
+The IOB core curriculum included enough background in data analysis.
+The skills and concepts I learned in IOB classes prepared me for my current research.
+The skills and concepts I learned in IOB classes prepared me for my future career.
+[[Answers]]
+1-Strongly Disagree
+2-Disagree
+3-Neither Agree or Disagree
+4-Agree
+5-Strongly Agree
+N/A
+
+[[Question:Matrix]]
+Please rate your agreement with the following statements.
+[[Choices]]
+One or more of the IOB electives were relevant to my research/goals.
+One or more of the other electives were relevant to my research/goals.
+The courses I would be interested in taking were not available in IOB or other departments.
+[[Answers]]
+1-Strongly Disagree
+2-Disagree
+3-Neither Agree or Disagree
+4-Agree
+5-Strongly Agree
+N/A
+
+[[Question:TE]]
+If you have additional feedback about the IOB curriculum, please share it here.
+
+[[Block:Communication and Community]]
+
+[[Question:Matrix]]
+In the past year, how often did you attend the following events:
+[[Choices]]
+BIGSA social events?
+Other student organization events
+Grad school career workshops
+Grad school financial workshops
+[[Answers]]
+1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always
+
+[[Question:Matrix]]
+In the past year, I have received enough information from IOB about the following topics: 
+[[Choices]]
+IOB events
+Dissertations
+Seminars
+New hires
+Awards received
+Job openings
+Grant opportunities
+Conferences
+[[Answers]]
+1-Strongly Disagree
+2-Disagree
+3-Neither Agree or Disagree
+4-Agree
+5-Strongly Agree
+N/A
+
+[[Question:TE]]
+If you have additional feedback about the communications you have received from IOB (e.g. frequency, mode of communication) please enter it here.
+
+[[Block:BIGSA and Social Events]]
+
+[[Question:MC:MultipleAnswer]]
+What would make you more likely to attend future BIGSA events? Select all that apply:
+[[Choices]]
+I try to attend most events
+I don't know about events
+Nothing, I'm too busy to attend
+I'm not interested in the events offered
+Other (specify below)
+
+[[Question:MC]]
+In general, would you like to see more social events?
+[[Choices]]
+Yes
+No
+Unsure
+
+[[Question:TE]]
+If you have additional feedback about BIGSA or social events, please share it here.
+
+[[Block:Career Development]]
+
+[[Question:Matrix]]
+How interested would you be in working in the following sectors?
+[[Choices]]
+Academic (Research Focus)
+Academic (Teaching Focus)
+Biotechnology Industry
+Agricultural Industry
+Pharmaceutical Industry
+Healthcare Industry
+Other Industry
+Science Communication
+Nonprofit Research Institute
+Science Policy
+Consulting
+National Labs
+State Labs
+Unsure
+Other (specify below)
+[[Answers]]
+1-Disinterested
+2-Somewhat disinterested
+3-Neither interested nor disinterested
+4-Somewhat interested
+5-Interested
+
+
+[[Question:MC:MultipleAnswer]]
+What kind of career development resources and opportunities would be helpful to you?
+[[Choices]]
+Workshops geared toward learning a specific technical skill, concept, or software
+Workshops on developing soft skills
+Workshops on job search skills (resume building, Linked-In, interviews and salary negotiation, etc.)
+Career focused talks and panels by alumni and other speakers
+Networking events
+IOB-hired professional headhunter to assist in job preparation and placement
+Other (specify below)
+
+
+[[Question:Matrix]]
+Please rate your agreement with the following statements:
+[[Choices]]
+I am able to attend most conferences and/or workshops I am interested in
+I have financial support to attend scientific conference/training opportunities
+I have financial support to attend non-scientific networking/training events
+[[Answers]]
+1-Strongly Disagree
+2-Disagree
+3-Neither Agree or Disagree
+4-Agree
+5-Strongly Agree
+N/A
+
+[[Question:TE]]
+What types of career development opportunities in IOB would you like to see in the future? 
+
+[[Question:MC:MultipleAnswer]]
+In the past year, my funding has come from the following sources:
+[[Choices]]
+External fellowship
+T32 training grant or other UGA fellowship
+Research assistantship (lab industry contract)
+Research assistantship (lab grant)
+Research assistantship (other lab funds)
+Research assistantship (departmental funds)
+Research assistantship (government contract)
+Teaching assistantship (IOB)
+Teaching assistantship (other department)
+No funding support
+Unsure
+
+
+[[Question:TE]]
+If you have additional feedback about BIGSA or social events, please share it here.
+
+[[Block:Wellbeing]]
+
+
+
+[[Question:MC:MultipleAnswer]]
+In the past year, how many of the following have caused you significant financial strain?
+[[Choices]]
+No significant financial strain
+Cost of living (rent, utilities, food, etc.)
+IOB reimbursable expenses (e.g. conference registration fees)
+Debt (e.g. student loans)
+Recurring medical expenses
+Emergency/non-recurring medical expenses
+Other recurring expenses
+Other emergency/non-recurring expenses
+Other (specify below)
+
+
+[[Question:MC:MultipleAnswer]]
+In the past year, how many of the following have you used your personal funds for, without reimbursement?
+[[Choices]]
+I have not used any of my personal funds for activities related to research or teaching
+Office/Lab supplies
+Supplies for the classroom
+Conference costs (e.g. workshop registration fee, lodging)
+Software that is available for free on campus/lab computers
+Software that is not available on campus/lab computers
+
+[[Question:ConstantSum]]
+On average, how many total hours per week do you spend for each of the following activities?
+[[Choices]]
+Professional organizations and outreach activities
+Classwork
+Teaching
+Funding source
+Thesis/dissertation research
+
+[[Question:ConstantSum]]
+Approximately how many days have you taken off in the past year for each of the following reasons? Do not include time where you are working remotely.
+[[Choices]]
+Parental leave
+Medical leave (including sick days)
+Caregiving leave
+Bereavement leave
+Travel required for visa requirements
+Military leave
+UGA holidays
+Personal days (including vacation)
+
+[[Question:Matrix]]
+Do you feel comfortable asking for days off for the following reasons?
+[[Choices]]
+Parental leave
+Mental health
+Physical health
+Caregiving leave
+Bereavement leave
+Travel required for visa requirements
+Military leave
+UGA holidays
+Personal days (including vacation)
+[[Answers]]
+No, my PI makes me feel bad for taking time off.
+Yes, as long as I have been productive recently.
+Yes, as long as I catch my PI in the right mood.
+Yes; my PI is supportive of this time off.
+
+[[Question:Matrix]]
+In the past year, how often do you feel you have had sufficient time for the following activities?
+[[Choices]]
+Spending time with family
+Exercise
+Volunteering, advocacy, and outreach
+Preparing meals
+Socializing outside of work
+Attending cultural events and religious observances
+Hobbies or other activities you enjoy
+[[Answers]]
+1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always
+N/A
+
+[[Question:MC]]
+In the past year, how would you rate your mental and emotional health?
+[[Choices]]
+1-Very Poor
+2-Poor
+3-Acceptable
+4-Good
+5-Very Good
+Prefer not to answer
+
+[[Question:MC:SingleAnswer:Horizontal]]
+In the past year, how often have you felt stressed?
+[[Choices]]
+1-Never
+2-Rarely
+3-Sometimes
+4-Often
+5-Always
+
+[[Question:MC]]
+In the past year, what has been the impact of the graduate program on your mental health (or well being)?
+[[Choices]]
+Positive
+Neutral
+Negative - and I have sought professional help
+Negative - and I have not sought professional help
+Prefer not to answer
+
+
+[[Question:TE]]
+If you have additional feedback around graduate student wellbeing, please share it here.
+
+[[Block:Final Comments]]
+
+[[Question:TE]]
+If there is anything else you would like to share with us, please do so below.

@@ -1,0 +1,669 @@
+{
+    "SurveyEntry": {
+        "SurveyID": "SV_dcJbzf5pOcctZ0a",
+        "SurveyName": "empty survey",
+        "SurveyDescription": null,
+        "SurveyOwnerID": "UR_82hSeBo3AjuxM5U",
+        "SurveyBrandID": "ugeorgia",
+        "DivisionID": "DV_42V8qKI9A0TWwfj",
+        "SurveyLanguage": "EN",
+        "SurveyActiveResponseSet": "RS_4H4FOmcEDW7FuC2",
+        "SurveyStatus": "Inactive",
+        "SurveyStartDate": "0000-00-00 00:00:00",
+        "SurveyExpirationDate": "0000-00-00 00:00:00",
+        "SurveyCreationDate": "2023-11-06 22:42:42",
+        "CreatorID": "UR_82hSeBo3AjuxM5U",
+        "LastModified": "2023-11-06 22:43:58",
+        "LastAccessed": "0000-00-00 00:00:00",
+        "LastActivated": "0000-00-00 00:00:00",
+        "Deleted": null
+    },
+    "SurveyElements": [
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "BL",
+            "PrimaryAttribute": "Survey Blocks",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": [
+                {
+                    "Type": "Trash",
+                    "Description": "Trash / Unused Questions",
+                    "ID": "BL_2cbDhi6RmHXbnF4"
+                },
+                {
+                    "Description": "Instructions",
+                    "Type": "Default",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID1"
+                        }
+                    ],
+                    "ID": "BL_000000000000001"
+                },
+                {
+                    "Description": "Student Info",
+                    "Type": "Default",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID2"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID3"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID4"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID5"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID6"
+                        }
+                    ],
+                    "ID": "BL_000000000000002"
+                },
+                {
+                    "Description": "Recruitment",
+                    "Type": "Default",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID7"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID8"
+                        }
+                    ],
+                    "ID": "BL_000000000000003"
+                },
+                {
+                    "Type": "Standard",
+                    "SubType": "",
+                    "Description": "Block 3",
+                    "ID": "BL_8ogHfFwIKehYdxQ",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID9"
+                        },
+                        {
+                            "Type": "Page Break"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID10"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "FL",
+            "PrimaryAttribute": "Survey Flow",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "Flow": [
+                    {
+                        "ID": "BL_000000000000001",
+                        "Type": "Block",
+                        "FlowID": "FL_2"
+                    },
+                    {
+                        "ID": "BL_000000000000002",
+                        "Type": "Block",
+                        "FlowID": "FL_3"
+                    },
+                    {
+                        "ID": "BL_000000000000003",
+                        "Type": "Block",
+                        "FlowID": "FL_4"
+                    },
+                    {
+                        "ID": "BL_8ogHfFwIKehYdxQ",
+                        "Type": "Standard",
+                        "FlowID": "FL_5"
+                    }
+                ],
+                "Properties": {
+                    "Count": 5
+                },
+                "FlowID": "FL_1",
+                "Type": "Root"
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "PL",
+            "PrimaryAttribute": "Preview Link",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "PreviewType": "Brand",
+                "PreviewID": "4cf4d6a6-899e-44c5-9367-456f04e44209"
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SO",
+            "PrimaryAttribute": "Survey Options",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "BackButton": "false",
+                "SaveAndContinue": "true",
+                "SurveyProtection": "PublicSurvey",
+                "BallotBoxStuffingPrevention": "false",
+                "NoIndex": "Yes",
+                "SecureResponseFiles": "true",
+                "SurveyExpiration": "None",
+                "SurveyTermination": "DefaultMessage",
+                "Header": "",
+                "Footer": "",
+                "ProgressBarDisplay": "None",
+                "PartialData": "+1 week",
+                "ValidationMessage": "",
+                "PreviousButton": "",
+                "NextButton": "",
+                "SurveyTitle": "Qualtrics Survey | Qualtrics Experience Management",
+                "SkinLibrary": "ugeorgia",
+                "SkinType": "MQ",
+                "Skin": "skin1_new",
+                "NewScoring": 1,
+                "SurveyMetaDescription": "The most powerful, simple and trusted way to gather experience data. Start your journey to experience management and try a free account today."
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID8",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "<br>",
+                "DataExportTag": "Q8",
+                "QuestionType": "TE",
+                "Selector": "ML",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID8"
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SCO",
+            "PrimaryAttribute": "Scoring",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "ScoringCategories": [],
+                "ScoringCategoryGroups": [],
+                "ScoringSummaryCategory": null,
+                "ScoringSummaryAfterQuestions": 0,
+                "ScoringSummaryAfterSurvey": 0,
+                "DefaultScoringCategory": null,
+                "AutoScoringCategory": null
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "PROJ",
+            "PrimaryAttribute": "CORE",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": "1.1.0",
+            "Payload": {
+                "ProjectCategory": "CORE",
+                "SchemaVersion": "1.1.0"
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "STAT",
+            "PrimaryAttribute": "Survey Statistics",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "MobileCompatible": true,
+                "ID": "Survey Statistics"
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID1",
+            "SecondaryAttribute": "**Instructions here**",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "**Instructions here**<br>",
+                "DataExportTag": "Q1",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "**Instructions here**",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID1"
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "QC",
+            "PrimaryAttribute": "Survey Question Count",
+            "SecondaryAttribute": "10",
+            "TertiaryAttribute": null,
+            "Payload": null
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID2",
+            "SecondaryAttribute": "Are you a PhD student or a Master's student?",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Are you a PhD student or a Master's student?<br>",
+                "DataExportTag": "Q2",
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Are you a PhD student or a Master's student?",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID2",
+                "Choices": {
+                    "1": {
+                        "Display": "PhD"
+                    },
+                    "2": {
+                        "Display": "Master's"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2"
+                ]
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID5",
+            "SecondaryAttribute": "Are you an international student?",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Are you an international student?<br>",
+                "DataExportTag": "Q5",
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Are you an international student?",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID5",
+                "Choices": {
+                    "1": {
+                        "Display": "Yes"
+                    },
+                    "2": {
+                        "Display": "No"
+                    },
+                    "3": {
+                        "Display": "Prefer not to answer"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2",
+                    "3"
+                ]
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID9",
+            "SecondaryAttribute": "Click to write the question text",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Click to write the question text",
+                "DefaultChoices": false,
+                "DataExportTag": "Q3",
+                "QuestionType": "Matrix",
+                "Selector": "Likert",
+                "SubSelector": "SingleAnswer",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText",
+                    "TextPosition": "inline",
+                    "ChoiceColumnWidth": 25,
+                    "RepeatHeaders": "none",
+                    "WhiteSpace": "OFF",
+                    "MobileFirst": true
+                },
+                "QuestionDescription": "Click to write the question text",
+                "Choices": {
+                    "1": {
+                        "Display": "Click to write Statement 1"
+                    },
+                    "2": {
+                        "Display": "Click to write Statement 2"
+                    },
+                    "3": {
+                        "Display": "Click to write Statement 3"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 4,
+                "Answers": {
+                    "1": {
+                        "Display": "Click to write Scale Point 1"
+                    },
+                    "2": {
+                        "Display": "Click to write Scale Point 2"
+                    },
+                    "3": {
+                        "Display": "Click to write Scale Point 3"
+                    }
+                },
+                "AnswerOrder": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "ChoiceDataExportTags": false,
+                "QuestionID": "QID9"
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID10",
+            "SecondaryAttribute": "Click to write the question text",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Click to write the question text",
+                "DefaultChoices": false,
+                "DataExportTag": "Q4",
+                "QuestionType": "DB",
+                "Selector": "TB",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Click to write the question text",
+                "ChoiceOrder": [],
+                "Validation": {
+                    "Settings": {
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID10"
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "RS",
+            "PrimaryAttribute": "RS_4H4FOmcEDW7FuC2",
+            "SecondaryAttribute": "Default Response Set",
+            "TertiaryAttribute": null,
+            "Payload": null
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID7",
+            "SecondaryAttribute": "How were you recruited/admitted to IOB?",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "How were you recruited/admitted to IOB?<br>",
+                "DataExportTag": "Q7",
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "How were you recruited/admitted to IOB?",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID7",
+                "Choices": {
+                    "1": {
+                        "Display": "Through ILS"
+                    },
+                    "2": {
+                        "Display": "Through IPS"
+                    },
+                    "3": {
+                        "Display": "Direct admission"
+                    },
+                    "4": {
+                        "Display": "Other (specify below)"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ]
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID4",
+            "SecondaryAttribute": "If you are a PhD student, have you completed your qualifying exams?",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "If you are a PhD student, have you completed your qualifying exams?<br>",
+                "DataExportTag": "Q4",
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "If you are a PhD student, have you completed your qualifying exams?",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID4",
+                "Choices": {
+                    "1": {
+                        "Display": "Yes"
+                    },
+                    "2": {
+                        "Display": "No"
+                    },
+                    "3": {
+                        "Display": "N/A"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2",
+                    "3"
+                ]
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID6",
+            "SecondaryAttribute": "Is English your native language?",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Is English your native language?<br>",
+                "DataExportTag": "Q6",
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "Is English your native language?",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID6",
+                "Choices": {
+                    "1": {
+                        "Display": "Yes"
+                    },
+                    "2": {
+                        "Display": "No"
+                    },
+                    "3": {
+                        "Display": "Prefer not to answer"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2",
+                    "3"
+                ]
+            }
+        },
+        {
+            "SurveyID": "SV_dcJbzf5pOcctZ0a",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID3",
+            "SecondaryAttribute": "What year did you start your current degree program at UGA (not in IOB specifically)?",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "What year did you start your current degree program at UGA (not in IOB specifically)?<br>",
+                "DataExportTag": "Q3",
+                "QuestionType": "MC",
+                "Selector": "SAVR",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "What year did you start your current degree program at UGA (not in IOB specifically)?",
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID3",
+                "Choices": {
+                    "1": {
+                        "Display": "2023"
+                    },
+                    "2": {
+                        "Display": "2022"
+                    },
+                    "3": {
+                        "Display": "2021"
+                    },
+                    "4": {
+                        "Display": "2020"
+                    },
+                    "5": {
+                        "Display": "2019"
+                    },
+                    "6": {
+                        "Display": "2018"
+                    },
+                    "7": {
+                        "Display": "2017"
+                    },
+                    "8": {
+                        "Display": "2016 or before"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                ]
+            }
+        }
+    ]
+}

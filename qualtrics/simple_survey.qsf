@@ -27,15 +27,15 @@
             "TertiaryAttribute": null,
             "Payload": [
                 {
+                    "Description": "Student Info",
                     "Type": "Default",
-                    "Description": "Default Question Block",
-                    "ID": "BL_000000000000001",
                     "BlockElements": [
                         {
                             "Type": "Question",
                             "QuestionID": "QID1"
                         }
-                    ]
+                    ],
+                    "ID": "BL_000000000000001"
                 },
                 {
                     "Type": "Trash",
@@ -59,7 +59,7 @@
                     }
                 ],
                 "Properties": {
-                    "Count": 2
+                    "Count": 1
                 },
                 "FlowID": "FL_1",
                 "Type": "Root"
@@ -154,36 +154,27 @@
         },
         {
             "SurveyID": "SV_8uYCLiVlYVfp0Ee",
+            "Element": "RS",
+            "PrimaryAttribute": "RS_5b4MXbkTJ9ytYmG",
+            "SecondaryAttribute": "Default Response Set",
+            "TertiaryAttribute": null,
+            "Payload": null
+        },
+        {
+            "SurveyID": "SV_8uYCLiVlYVfp0Ee",
             "Element": "SQ",
             "PrimaryAttribute": "QID1",
-            "SecondaryAttribute": "Click to write the question text",
+            "SecondaryAttribute": "Are you a PhD student or a Master's student?",
             "TertiaryAttribute": null,
             "Payload": {
-                "QuestionText": "Click to write the question text",
+                "QuestionText": "Are you a PhD student or a Master's student?<br>",
                 "DataExportTag": "Q1",
                 "QuestionType": "MC",
                 "Selector": "SAVR",
-                "SubSelector": "TX",
                 "Configuration": {
                     "QuestionDescriptionOption": "UseText"
                 },
-                "QuestionDescription": "Click to write the question text",
-                "Choices": {
-                    "1": {
-                        "Display": "Click to write Choice 1"
-                    },
-                    "2": {
-                        "Display": "Click to write Choice 2"
-                    },
-                    "3": {
-                        "Display": "Click to write Choice 3"
-                    }
-                },
-                "ChoiceOrder": [
-                    "1",
-                    "2",
-                    "3"
-                ],
+                "QuestionDescription": "Are you a PhD student or a Master's student?",
                 "Validation": {
                     "Settings": {
                         "ForceResponse": "OFF",
@@ -193,16 +184,20 @@
                 "Language": [],
                 "NextChoiceId": 4,
                 "NextAnswerId": 1,
-                "QuestionID": "QID1"
+                "QuestionID": "QID1",
+                "Choices": {
+                    "1": {
+                        "Display": "PhD"
+                    },
+                    "2": {
+                        "Display": "Master's"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2"
+                ]
             }
-        },
-        {
-            "SurveyID": "SV_8uYCLiVlYVfp0Ee",
-            "Element": "RS",
-            "PrimaryAttribute": "RS_5b4MXbkTJ9ytYmG",
-            "SecondaryAttribute": "Default Response Set",
-            "TertiaryAttribute": null,
-            "Payload": null
         }
     ]
 }
