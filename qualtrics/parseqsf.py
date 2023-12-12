@@ -1,7 +1,35 @@
+"""
+Command: ```python3 parseqsf.py {blank_survey.qsf} {gsss_questions.txt} {out.qsf}```
+
+To use, make a new survey in Qualtrics, name it whatever you want, then go to Tools > Import/Export > Export Survey. 
+This should download a file with a .qsf extension. Use the path to that as input for this program (blank_survey.qsf above) as well as the .txt file where we've been writing our survey questions.
+This program will parse those questions and write them in a .qsf format (which is really just a JSON file with specific structure).
+If you don't specify an output file path (third arg) it will make a new file replacing the .txt with .qsf in the questions input.
+
+"""
 import os
 import sys
 import json
-from olivers_utils import relaxed_bool, getdict, setdict
+
+#olivers_utils functions
+from functools import reduce
+from operator import getitem
+
+def getdict(dictionary, map_list):
+    return reduce(getitem, map_list, dictionary)
+    
+def setdict(dictionary, map_list, value):
+    if type(map_list) is str: map_list = [map_list]
+    try:
+        getdict(dictionary, map_list[:-1])[map_list[-1]] = value
+    except:
+        if(len(map_list) > 1): 
+            setdict(dictionary, map_list[:-1],{})
+            setdict(dictionary, map_list, value)
+        else:
+            raise Exception
+
+#Program
 
 class Survey:
     def __init__(self, qsf, input_questions, keep_questions = False):
@@ -25,6 +53,7 @@ class Survey:
 
         with open(input_questions,"r") as input:
             text = input.read()
+            text = "\n".join([line for line in text.split("\n") if not line[:2] == "#?"])
 
         text = text.split("[[Block:")[1:]
         for block in text:
@@ -66,14 +95,14 @@ class Survey:
                 info["ID"] = f'BL_{"".join(["0" for x in range(15-len(strindex))])}{len(self.Payload)}'
 
             try: 
-                block_text = block_text.split("[[Question:")[1:]
+                block_text = block_text.replace("[[PageBreak]]","[[Question:PageBreak]]").split("[[Question:")[1:]
             except:
                 info.pop("BlockElements")
                 self.Payload.insert(-1,info)
                 return
 
             for question in block_text:
-                question = self.survey.Question(self.survey,info,question)
+                question = self.survey.Question(self.survey,question)
                 info["BlockElements"].append(question.block_info)
 
             self.Payload[strindex] = info
@@ -128,9 +157,12 @@ class Survey:
             self.__dict__.pop("survey").elements[index] = self.__dict__
 
     class Question:
-        def __init__(self, survey,block_info,question_text):
+        def __init__(self, survey,question_text):
             self.survey = survey
             question_types = question_text.split("]]")[0].split(":")
+            if question_types[0] == "PageBreak":
+                self.block_info = {"Type": "Page Break"}
+                return
             qtype = {"MC":"MC","TE":"TE","CS":"CS","ConstantSum":"CS","Slider":"Slider","Text":"DB","Matrix":"Matrix"}[question_types[0]]
 
             self.count = survey.count.plus()
@@ -195,8 +227,13 @@ class Survey:
                     "QuestionID":f"QID{self.count}"
                 }
             }
-            self.Payload = getdict(self.info,["Payload"])
-            if qtype == "CS" or qtype == "MC": self.Payload["SubSelector"] = "TX"
+            Payload = getdict(self.info,["Payload"])
+            if qtype == "DB":
+                text = "<br>".join([line.strip() for line in question_text.split("\n")[1:]])
+                Payload["QuestionText"] = text
+        
+            if qtype == "CS" or qtype == "MC": Payload["SubSelector"] = "TX"
+            elif qtype == "Matrix": Payload["SubSelector"] = "SingleAnswer"
 
             if "[[Choices]]" in question_text:
                 choices = [choice.strip() for choice in question_text.split("[[Choices]]")[1].split("[[")[0].split("\n") if choice.strip()]
@@ -207,8 +244,8 @@ class Survey:
                     if choices[x].strip().lower() == "other (specify below)":
                         choice_dict[str(x+1)].update({"TextEntry": "true","TextEntrySize": "Small"})
                     orders.append(str(x+1))
-                self.Payload["Choices"] = choice_dict
-                self.Payload["ChoiceOrder"] = orders
+                Payload["Choices"] = choice_dict
+                Payload["ChoiceOrder"] = orders
 
             if "[[Answers]]" in question_text:
                 answers = [answer.strip() for answer in question_text.split("[[Answers]]")[1].split("[[")[0].split("\n") if answer.strip()]
@@ -217,8 +254,8 @@ class Survey:
                 for x in range(len(answers)):
                     answer_dict[str(x+1)] = {"Display":answers[x]}
                     orders.append(str(x+1))
-                self.Payload["Answers"] = answer_dict
-                self.Payload["AnswerOrder"] = orders
+                Payload["Answers"] = answer_dict
+                Payload["AnswerOrder"] = orders
 
             self.block_info = {
                 "Type":"Question",
@@ -227,32 +264,20 @@ class Survey:
             self.survey.elements.append(self.info)
 
         def extract(self):
-            return self.info
-
-        
-        
+            return self.info        
 
 
-def main(blank_qsf, input_questions, out_qsf = False, keep_questions = False):
-    keep_questions = relaxed_bool(keep_questions)
+def main(blank_qsf, input_questions, out_qsf = False):
+    blank_qsf = os.path.expanduser(blank_qsf)
+    input_questions = os.path.expanduser(input_questions)
     if not out_qsf: out_qsf = input_questions.replace(".txt",".qsf")
+    else: out_qsf = os.path.expanduser(out_qsf)
     
-    survey = Survey(blank_qsf, input_questions, keep_questions)
-
+    survey = Survey(blank_qsf, input_questions, False)
 
     with open(out_qsf,"w") as output:
-        json.dump(survey.qsf, output, indent=4)
-    
+        json.dump(survey.qsf, output)
 
-    
-
-def qsf_to_json(qsf_in, json_out):
-    with open(qsf_in,"r") as input:
-        qsf = json.load(input)
-    with open(json_out,"w") as output:
-        json.dump(qsf, output, indent=4)
 
 if __name__ == "__main__":
-    if sys.argv[1] == "export_json":
-        qsf_to_json(sys.argv[2:])
-    else: main(*sys.argv[1:])
+    main(*sys.argv[1:])

@@ -1,0 +1,304 @@
+{
+    "SurveyEntry": {
+        "SurveyID": "SV_2t8cTkYy6P8VhlA",
+        "SurveyName": "newtest",
+        "SurveyDescription": null,
+        "SurveyOwnerID": "UR_82hSeBo3AjuxM5U",
+        "SurveyBrandID": "ugeorgia",
+        "DivisionID": "DV_42V8qKI9A0TWwfj",
+        "SurveyLanguage": "EN",
+        "SurveyActiveResponseSet": "RS_eP4Vn3DytfarnjU",
+        "SurveyStatus": "Inactive",
+        "SurveyStartDate": "0000-00-00 00:00:00",
+        "SurveyExpirationDate": "0000-00-00 00:00:00",
+        "SurveyCreationDate": "2023-11-07 12:04:33",
+        "CreatorID": "UR_82hSeBo3AjuxM5U",
+        "LastModified": "2023-11-07 13:29:57",
+        "LastAccessed": "0000-00-00 00:00:00",
+        "LastActivated": "0000-00-00 00:00:00",
+        "Deleted": null
+    },
+    "SurveyElements": [
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "BL",
+            "PrimaryAttribute": "Survey Blocks",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": [
+                {
+                    "Type": "Default",
+                    "Description": "Default Question Block",
+                    "ID": "BL_39PVhrsOXndM8gC",
+                    "BlockElements": [
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID1"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID2"
+                        },
+                        {
+                            "Type": "Question",
+                            "QuestionID": "QID3"
+                        }
+                    ]
+                },
+                {
+                    "Type": "Trash",
+                    "Description": "Trash / Unused Questions",
+                    "ID": "BL_2aybh01akvzk2LY"
+                }
+            ]
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "FL",
+            "PrimaryAttribute": "Survey Flow",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "Flow": [
+                    {
+                        "ID": "BL_39PVhrsOXndM8gC",
+                        "Type": "Block",
+                        "FlowID": "FL_2"
+                    }
+                ],
+                "Properties": {
+                    "Count": 2
+                },
+                "FlowID": "FL_1",
+                "Type": "Root"
+            }
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "PL",
+            "PrimaryAttribute": "Preview Link",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "PreviewType": "Brand",
+                "PreviewID": "9f0201ea-26e1-4fbb-8acc-280f1d48bd7a"
+            }
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "SO",
+            "PrimaryAttribute": "Survey Options",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "BackButton": "false",
+                "SaveAndContinue": "true",
+                "SurveyProtection": "PublicSurvey",
+                "BallotBoxStuffingPrevention": "false",
+                "NoIndex": "Yes",
+                "SecureResponseFiles": "true",
+                "SurveyExpiration": "None",
+                "SurveyTermination": "DefaultMessage",
+                "Header": "",
+                "Footer": "",
+                "ProgressBarDisplay": "None",
+                "PartialData": "+1 week",
+                "ValidationMessage": "",
+                "PreviousButton": "",
+                "NextButton": "",
+                "SurveyTitle": "Qualtrics Survey | Qualtrics Experience Management",
+                "SkinLibrary": "ugeorgia",
+                "SkinType": "MQ",
+                "Skin": "skin1_new",
+                "NewScoring": 1,
+                "SurveyMetaDescription": "The most powerful, simple and trusted way to gather experience data. Start your journey to experience management and try a free account today."
+            }
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "SCO",
+            "PrimaryAttribute": "Scoring",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "ScoringCategories": [],
+                "ScoringCategoryGroups": [],
+                "ScoringSummaryCategory": null,
+                "ScoringSummaryAfterQuestions": 0,
+                "ScoringSummaryAfterSurvey": 0,
+                "DefaultScoringCategory": null,
+                "AutoScoringCategory": null
+            }
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "PROJ",
+            "PrimaryAttribute": "CORE",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": "1.1.0",
+            "Payload": {
+                "ProjectCategory": "CORE",
+                "SchemaVersion": "1.1.0"
+            }
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "STAT",
+            "PrimaryAttribute": "Survey Statistics",
+            "SecondaryAttribute": null,
+            "TertiaryAttribute": null,
+            "Payload": {
+                "MobileCompatible": true,
+                "ID": "Survey Statistics"
+            }
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "QC",
+            "PrimaryAttribute": "Survey Question Count",
+            "SecondaryAttribute": "3",
+            "TertiaryAttribute": null,
+            "Payload": null
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "RS",
+            "PrimaryAttribute": "RS_eP4Vn3DytfarnjU",
+            "SecondaryAttribute": "Default Response Set",
+            "TertiaryAttribute": null,
+            "Payload": null
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID3",
+            "SecondaryAttribute": "dropdownnn",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "dropdownnn",
+                "DefaultChoices": false,
+                "DataExportTag": "Q3",
+                "QuestionType": "MC",
+                "Selector": "DL",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "dropdownnn",
+                "Choices": {
+                    "1": {
+                        "Display": "2016"
+                    },
+                    "2": {
+                        "Display": "2017"
+                    },
+                    "3": {
+                        "Display": "2018"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID3"
+            }
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID2",
+            "SecondaryAttribute": "Horizontal",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "Horizontal",
+                "DefaultChoices": false,
+                "DataExportTag": "Q2",
+                "QuestionType": "MC",
+                "Selector": "SAHR",
+                "SubSelector": "TX",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText",
+                    "LabelPosition": "BELOW"
+                },
+                "QuestionDescription": "Horizontal",
+                "Choices": {
+                    "1": {
+                        "Display": "gnrsh"
+                    },
+                    "2": {
+                        "Display": "etyjdt"
+                    },
+                    "3": {
+                        "Display": "wrgwet"
+                    }
+                },
+                "ChoiceOrder": [
+                    "1",
+                    "2",
+                    "3"
+                ],
+                "Validation": {
+                    "Settings": {
+                        "ForceResponse": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 4,
+                "NextAnswerId": 1,
+                "QuestionID": "QID2"
+            }
+        },
+        {
+            "SurveyID": "SV_2t8cTkYy6P8VhlA",
+            "Element": "SQ",
+            "PrimaryAttribute": "QID1",
+            "SecondaryAttribute": "What year did you start your program?",
+            "TertiaryAttribute": null,
+            "Payload": {
+                "QuestionText": "What year did you start your program?",
+                "DefaultChoices": false,
+                "DataExportTag": "Q1",
+                "QuestionID": "QID1",
+                "QuestionType": "CS",
+                "Selector": "VR",
+                "SubSelector": "TX",
+                "Configuration": {
+                    "QuestionDescriptionOption": "UseText"
+                },
+                "QuestionDescription": "What year did you start your program?",
+                "Choices": {
+                    "1": {
+                        "Display": "&nbsp;"
+                    }
+                },
+                "ChoiceOrder": [
+                    1
+                ],
+                "Validation": {
+                    "Settings": {
+                        "EnforceRange": "OFF",
+                        "Type": "None"
+                    }
+                },
+                "GradingData": [],
+                "Language": [],
+                "NextChoiceId": 2,
+                "NextAnswerId": 1,
+                "Labels": [],
+                "ClarifyingSymbolType": "None"
+            }
+        }
+    ]
+}
