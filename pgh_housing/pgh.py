@@ -3,7 +3,6 @@ import json
 from datetime import date
 from urllib.request import Request, urlopen
 from olivers_utils import download_spreadsheet, upload_spreadsheet
-import numpy as np
 from scipy import stats
 
 def attempt(function, argument):
@@ -19,7 +18,7 @@ def valid_format(format, value):
     except: return False
 
 def double(value):
-    return float(value.replace(",",""))
+    return float(str(value).replace(",",""))
 def sq_ft(value):
     if value == "duplex": return 2000
     else:
@@ -88,50 +87,60 @@ class house:
             return None
         if negative: return 100 - p
         else: return p
+    def ratio(self, characteristic, format = double, negative=False):
+        maximum = max([format(house.__dict__[characteristic]) for house in self.other_houses if valid_format(double,house.__dict__[characteristic])])
+        result = format(self.__dict__[characteristic])/maximum*100
+        if negative: return 100 - result
+        else: return result
     
     def calculate_score(self, all_houses):
         self.other_houses = all_houses#[house for house in all_houses if not self == house]
         old_score = self.score
-        scores = {
-            "price":self.percentile("price",negative=True),
-            "sq_footage":self.percentile("sq_footage",sq_ft)*(1+(int(self.basement)+1)/22),
-            "bedrooms":100,
-            "bathrooms":100,
-            "neighborhood":(self.percentile("zillow_walkability_score")+self.percentile("proximity_to_game_store",negative=True))/2,
-            "inside":self.percentile("cuteness_of_inside"),
-            "kitchen":self.percentile("kitchen"),
-            "outside":self.percentile("cuteness_of_outside"),
-        }
-        penalties_and_bonuses = {
-            "dax_penalty":-1*(10-int(self.__dict__["backyard/dax_score"])),
-            "readiness_penalty":-1*(100/self.percentile("readiness")*int(self.age)/100),
-            "ev_penalty":-1*((10-double(self.__dict__["ev-ability"]))*(100 - scores["neighborhood"]))/1000,
-            "bonuses":int0(self.investment) + int0(self.other)
+        scores = {}
+        try:
+            scores = {
+                "price":self.ratio("price",negative=True),
+                "sq_footage":self.percentile("sq_footage",sq_ft)*(1+(int(self.basement)+1)/22),
+                "bedrooms":100,
+                "bathrooms":100,
+                "neighborhood":(int(self.zillow_walkability_score)+self.ratio("proximity_to_game_store",negative=True))/2,
+                "inside":self.percentile("cuteness_of_inside"),
+                "kitchen":self.percentile("kitchen"),
+                "outside":self.percentile("cuteness_of_outside")
+            }
+            penalties_and_bonuses = {
+                "dax_penalty":-1*(10-int(self.__dict__["backyard/dax_score"])),
+                "readiness_penalty":-1*(100/self.percentile("readiness")*int(self.age)/100),
+                "ev_penalty":-1*((10-double(self.__dict__["ev-ability"]))*(100 - scores["neighborhood"]))/1000,
+                "bonuses":int0(self.investment) + int0(self.other)
 
-        }
-        if int(self.__dict__["bedrooms/equivalent"]) < 3:
-            scores["bedrooms"] = 75
-        if int(self.bathrooms) < 2:
-            scores["bathrooms"] = 50
-        
-        weights = {
-            "price": 5,
-            "sq_footage":10,
-            "bedrooms":3,
-            "bathrooms":4,
-            "neighborhood":10,
-            "inside":10,
-            "outside":2,
-            "kitchen":4
-        }
+            }
+            bedrooms_ish = int(self.__dict__["bedrooms/equivalent"])
+            if int(self.basement) == 10: bedrooms_ish += 1
+            if int(bedrooms_ish) < 3:
+                scores["bedrooms"] = 75
+            if int(self.bathrooms) < 2:
+                scores["bathrooms"] = 50
+            
+            weights = {
+                "price": 3,
+                "sq_footage":10,
+                "bedrooms":3,
+                "bathrooms":4,
+                "neighborhood":20,
+                "inside":10,
+                "outside":2,
+                "kitchen":4
+            }
 
-        try: self.score = sum([scores[category]*weights[category] for category in scores])/sum([weights[category] for category in weights]) + sum([penalties_and_bonuses[i] for i in penalties_and_bonuses])
+            self.score = sum([scores[category]*weights[category] for category in scores])/sum([weights[category] for category in weights]) + sum([penalties_and_bonuses[i] for i in penalties_and_bonuses])
         except:
             self.score = None
-            print(scores)
 
         print(self.address)
-        print(self.score)       
+        print(scores)
+        print(self.score)
+        print("\n")
 
 
         if not self.score == old_score:
