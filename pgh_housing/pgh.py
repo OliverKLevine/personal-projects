@@ -3,6 +3,32 @@ import json
 from datetime import date
 from urllib.request import Request, urlopen
 from olivers_utils import download_spreadsheet, upload_spreadsheet
+import numpy as np
+from scipy import stats
+
+def attempt(function, argument):
+    try:
+        return function(argument)
+    except:
+        return None
+    
+def valid_format(format, value):
+    try:
+        format(value)
+        return True
+    except: return False
+
+def double(value):
+    return float(value.replace(",",""))
+def sq_ft(value):
+    if value == "duplex": return 2000
+    else:
+        try: return double(value)
+        except: return 1000
+def int0(value):
+    try: return int(value)
+    except: return 0
+
 
 class house:
     def __init__(self,table_line, header):
@@ -11,7 +37,7 @@ class house:
         self.update_spreadsheet = False
         self.find_webtype()
         for method in self.finder_methods: self.find_property(method)
-    
+
     def get_line(self):
         return [self.__dict__[i] for i in self.header]
     
@@ -45,8 +71,73 @@ class house:
     def find_property(self,property):
         if self.__dict__[property]: return
         if not self.web_text: self.get_web_text(self)
-        self.__dict__[property] = self.finder_methods[property](self.web_text)
+        self.__dict__[property] = attempt(self.finder_methods[property],self.web_text)
         self.update_spreadsheet = True
+    
+    def percentile(self, characteristic, format = double, negative=False):
+        array = [format(house.__dict__[characteristic]) for house in self.other_houses if valid_format(double,house.__dict__[characteristic])]
+        try:
+            p = stats.percentileofscore(
+                array,
+                format(self.__dict__[characteristic]),
+                kind="weak"
+            )
+        except:
+            #print(self.address)
+            #print(array)
+            return None
+        if negative: return 100 - p
+        else: return p
+    
+    def calculate_score(self, all_houses):
+        self.other_houses = all_houses#[house for house in all_houses if not self == house]
+        old_score = self.score
+        scores = {
+            "price":self.percentile("price",negative=True),
+            "sq_footage":self.percentile("sq_footage",sq_ft)*(1+(int(self.basement)+1)/22),
+            "bedrooms":100,
+            "bathrooms":100,
+            "neighborhood":(self.percentile("zillow_walkability_score")+self.percentile("proximity_to_game_store",negative=True))/2,
+            "inside":self.percentile("cuteness_of_inside"),
+            "kitchen":self.percentile("kitchen"),
+            "outside":self.percentile("cuteness_of_outside"),
+        }
+        penalties_and_bonuses = {
+            "dax_penalty":-1*(10-int(self.__dict__["backyard/dax_score"])),
+            "readiness_penalty":-1*(100/self.percentile("readiness")*int(self.age)/100),
+            "ev_penalty":-1*((10-double(self.__dict__["ev-ability"]))*(100 - scores["neighborhood"]))/1000,
+            "bonuses":int0(self.investment) + int0(self.other)
+
+        }
+        if int(self.__dict__["bedrooms/equivalent"]) < 3:
+            scores["bedrooms"] = 75
+        if int(self.bathrooms) < 2:
+            scores["bathrooms"] = 50
+        
+        weights = {
+            "price": 5,
+            "sq_footage":10,
+            "bedrooms":3,
+            "bathrooms":4,
+            "neighborhood":10,
+            "inside":10,
+            "outside":2,
+            "kitchen":4
+        }
+
+        try: self.score = sum([scores[category]*weights[category] for category in scores])/sum([weights[category] for category in weights]) + sum([penalties_and_bonuses[i] for i in penalties_and_bonuses])
+        except:
+            self.score = None
+            print(scores)
+
+        print(self.address)
+        print(self.score)       
+
+
+        if not self.score == old_score:
+            self.update_spreadsheet = True
+        
+
 
 def main():
     pgh_sheet_id = "1ehPYGR5tt4KAE6N2fFQ1NjU0R4fM7aG9vt8S5bYowaQ"
@@ -55,6 +146,7 @@ def main():
     header = [i.lower().replace(" ","_") for i in table_header]
     table = table[1:]
     houses = [house(line,header) for line in table]
+    [house.calculate_score(houses) for house in houses]
     update_sheet = any([house.update_spreadsheet for house in houses])
     if update_sheet:
         table = [table_header] + [house.get_line() for house in houses]
