@@ -1,4 +1,5 @@
 import sys
+import os
 import json
 from datetime import date
 from urllib.request import Request, urlopen
@@ -46,20 +47,33 @@ class house:
 
         if self.web_type == "zillow":
             def get_web_data(self):
-                if not self.web_text:
-                    print("Requesting data from zillow",file=sys.stderr)
+                search_web = True
+                if "address" in self.__dict__:
+                    self.cache_file = f"{'/'.join(__file__.split('/')[:-1])}/cache/{self.address}.json"
+                    if os.path.isfile(self.cache_file):
+                        with open(self.cache_file,"r") as i:
+                            self.webtext = i.read()
+                            zillow_data = json.loads(self.webtext)
+                            search_web = False
+                if search_web:
+                    print(f"Requesting data from zillow for {self.address}",file=sys.stderr)
                     r = Request(self.link,headers={"User-Agent":"Mozilla/6.0"})
                     self.web_text = urlopen(r).read().decode("utf-8")
                     self.page_accessed = str(date.today())
-                zillow_data = json.loads(self.web_text.split("<input id='hidden-reg-details'")[1].split('type="application/json">')[1].split("}<")[0] + "}")
-                zillow_data = json.loads(zillow_data["props"]["pageProps"]["componentProps"]["gdpClientCache"])
+                    zillow_data = json.loads(self.web_text.split("<input id='hidden-reg-details'")[1].split('type="application/json">')[1].split("}<")[0] + "}")
+                    zillow_data = json.loads(zillow_data["props"]["pageProps"]["componentProps"]["gdpClientCache"])
                 self.zillow_data = zillow_data[list(zillow_data.keys())[0]]["property"]
                 self.glance_facts = {item["factLabel"]:item["factValue"] for item in self.zillow_data["resoFacts"]["atAGlanceFacts"]}
+                with open(self.cache_file,"w") as o:
+                    json.dump(zillow_data,o,indent=4)
             self.get_web_text = get_web_data
             self.finder_methods = {
                 "address":lambda x: self.zillow_data["streetAddress"],
                 "price":lambda x: self.zillow_data["price"],
-                "sq_footage":lambda x: int(self.zillow_data["resoFacts"]["buildingArea"].replace(",","")),
+                "sq_footage":[
+                    lambda _: int(self.zillow_data["resoFacts"]["buildingArea"].replace(",","")),
+                    lambda _: {True:self.zillow_data["resoFacts"]["propertySubType"][0].lower(),False:"--"}["Multi-Unit" in self.zillow_data["resoFacts"]["propertySubType"]]
+                ],
                 "bedrooms/equivalent":lambda x: self.zillow_data["resoFacts"]["bedrooms"],
                 "bathrooms":lambda x: self.zillow_data["resoFacts"]["bathrooms"],
                 "age": lambda x: 2024 -  self.zillow_data["resoFacts"]["yearBuilt"],
@@ -70,7 +84,11 @@ class house:
     def find_property(self,property):
         if self.__dict__[property]: return
         if not self.web_text: self.get_web_text(self)
-        self.__dict__[property] = attempt(self.finder_methods[property],self.web_text)
+        if type(self.finder_methods[property]) is list: methods = self.finder_methods[property]
+        else: methods = [self.finder_methods[property]]
+        for method in methods:
+            self.__dict__[property] = attempt(method,self.web_text)
+            if self.__dict__[property]: break
         self.update_spreadsheet = True
     
     def percentile(self, characteristic, format = double, negative=False):
@@ -137,10 +155,12 @@ class house:
         except:
             self.score = None
 
+        """
         print(self.address)
         print(scores)
         print(self.score)
         print("\n")
+        """
 
 
         if not self.score == old_score:
