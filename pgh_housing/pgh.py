@@ -5,6 +5,7 @@ from datetime import date
 from urllib.request import Request, urlopen
 from olivers_utils import download_spreadsheet, upload_spreadsheet
 from scipy import stats
+import traceback
 
 def attempt(function, argument):
     try:
@@ -25,10 +26,9 @@ def sq_ft(value):
     else:
         try: return double(value)
         except: return 1000
-def int0(value):
+def int0(value,default=0):
     try: return int(value)
     except: return 0
-
 
 class house:
     def __init__(self,table_line, header):
@@ -131,9 +131,9 @@ class house:
             }
             penalties_and_bonuses = {
                 "dax_penalty":-1*(10-int(self.__dict__["backyard/dax_score"])),
-                "readiness_penalty":-1*(100/self.percentile("readiness")*int(self.age)/100),
+                "readiness_penalty":-1*(100/self.percentile("readiness")*int0(self.age,100)/100),
                 "ev_penalty":-1*((10-double(self.__dict__["ev-ability"]))*(100 - scores["neighborhood"]))/1000,
-                "bonuses":int0(self.investment) + int0(self.other)
+                "bonuses":int0(self.other)
 
             }
             bedrooms_ish = int(self.__dict__["bedrooms/equivalent"])
@@ -157,6 +157,7 @@ class house:
             self.score = sum([scores[category]*weights[category] for category in scores])/sum([weights[category] for category in weights]) + sum([penalties_and_bonuses[i] for i in penalties_and_bonuses])
         except:
             self.score = None
+            traceback.print_exc()
 
         """
         print(self.address)
@@ -179,7 +180,7 @@ def main():
     table = table[1:]
     houses = [house(line,header) for line in table if line[header.index("link")]]
     [house.calculate_score(houses) for house in houses]
-    update_sheet = any([house.update_spreadsheet for house in houses])
+    update_sheet = any([house.update_spreadsheet for house in houses]) or True
     if update_sheet:
         table = [table_header] + [house.get_line() for house in houses]
         upload_spreadsheet(pgh_sheet_id, table,worksheet="All")
