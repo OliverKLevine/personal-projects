@@ -48,7 +48,7 @@ class house:
         if self.web_type == "zillow":
             def get_web_data(self):
                 search_web = True
-                if "address" in self.__dict__:
+                if self.address:
                     self.cache_file = f"{'/'.join(__file__.split('/')[:-1])}/cache/{self.address}.json"
                     if os.path.isfile(self.cache_file):
                         with open(self.cache_file,"r") as i:
@@ -56,7 +56,7 @@ class house:
                             zillow_data = json.loads(self.webtext)
                             search_web = False
                 if search_web:
-                    print(f"Requesting data from zillow for {self.address}",file=sys.stderr)
+                    print(f"Requesting data from zillow for ",end="",file=sys.stderr)
                     r = Request(self.link,headers={"User-Agent":"Mozilla/6.0"})
                     self.web_text = urlopen(r).read().decode("utf-8")
                     self.page_accessed = str(date.today())
@@ -64,6 +64,9 @@ class house:
                     zillow_data = json.loads(zillow_data["props"]["pageProps"]["componentProps"]["gdpClientCache"])
                 self.zillow_data = zillow_data[list(zillow_data.keys())[0]]["property"]
                 self.glance_facts = {item["factLabel"]:item["factValue"] for item in self.zillow_data["resoFacts"]["atAGlanceFacts"]}
+                self.address = self.finder_methods["address"](self.web_text)
+                if search_web: print(self.address,file=sys.stderr)
+                self.cache_file = f"{'/'.join(__file__.split('/')[:-1])}/cache/{self.address}.json"
                 with open(self.cache_file,"w") as o:
                     json.dump(zillow_data,o,indent=4)
             self.get_web_text = get_web_data
@@ -137,7 +140,7 @@ class house:
             if int(self.basement) == 10: bedrooms_ish += 1
             if int(bedrooms_ish) < 3:
                 scores["bedrooms"] = 75
-            if int(self.bathrooms) < 2:
+            if float(self.bathrooms) < 2:
                 scores["bathrooms"] = 50
             
             weights = {
@@ -170,16 +173,16 @@ class house:
 
 def main():
     pgh_sheet_id = "1ehPYGR5tt4KAE6N2fFQ1NjU0R4fM7aG9vt8S5bYowaQ"
-    table = download_spreadsheet(pgh_sheet_id)
+    table = download_spreadsheet(pgh_sheet_id,"All")
     table_header = table[0]
     header = [i.lower().replace(" ","_") for i in table_header]
     table = table[1:]
-    houses = [house(line,header) for line in table]
+    houses = [house(line,header) for line in table if line[header.index("link")]]
     [house.calculate_score(houses) for house in houses]
     update_sheet = any([house.update_spreadsheet for house in houses])
     if update_sheet:
         table = [table_header] + [house.get_line() for house in houses]
-        upload_spreadsheet(pgh_sheet_id, table)
+        upload_spreadsheet(pgh_sheet_id, table,worksheet="All")
 
 if __name__ == "__main__":
     main()
