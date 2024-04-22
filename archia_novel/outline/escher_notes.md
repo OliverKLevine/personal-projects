@@ -1,0 +1,2 @@
+- the terms radiant and lightbringer are swapped from the campaign -- radiant is an honorific for all clerics. The lightbringer is the head of the church.
+- On truth -- Escherians consider Kolif'rem to be the god of truth, although this belief doesn't extend outside of Escher. Specifically, Kolif'rem and his clerics *create* and *reveal* truth. Anything said by a cleric is held to be true; clerics through the extension of Kolif'rems power are "makers" of truth. On the other hand, those outside of the clergy are expected to tell the (actual) truth, especially to the church.

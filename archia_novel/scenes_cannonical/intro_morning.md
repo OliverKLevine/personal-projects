@@ -46,4 +46,80 @@ Aoife froze. She didn't know. But Edda recovered more quickly than she did.
 
 Aoife returned her smile. "Thank you, Edda. You're dismissed."
 
-The woman nodded, turned, and left them, shutting the door gently behind herself. 
+The woman nodded, turned, and left them, shutting the door gently behind herself. Aoife waited to hear the soft sound of her retreating footsteps before pulling a thin, charred cord from her pocket and tying back the mass of her hair, not enough to walk, really, but enough to be out of reach of small, grabby hands. Then she kneeled in front of the mirror, and patted the ground in front of her, signalling Niamh to join her. The girl flounced into place without hesitation, pulling a handful of intricate spools and sprockets from her pockets as she did so and holding them up for Aoife to see.
+
+"I want my hair in these," she proclaimed proudly.
+
+Aoife raised an eyebrow. "*All* of them?"
+
+"Yep!" the girl practically shouted, flashing Aoife a gap-toothed smile. 
+
+Aoife felt a warm smile dawn on her face. "Alright," she said, "but I think Edda is going to have a fit."
+
+"That's why I asked *you*," Niamh declared, shrugging her shoulders and leaning back into Aoife's arms. Aoife held her there a moment, tenderly and gently, like she was worried the girl might break with the slightest pressure. 
+
+"That's... a fair point," she said softly. Then she closed her eyes, diving into a world of boundless, featureless white.
+
+"It's safe to look now," she whispered, running her fingers through her daughter's already-combed hair. She felt Niamh bounce in front of her. 
+
+"I want this one on the right," Niamh insisted, reaching up and pressing one of the spools into Aoife's hand. "Right here." She guided Aoife's fingers to the place she wanted it on her head.
+
+Aoife explored the spool with her fingers. A child's spool, it was simple enough for Aoife to form a picture of it in her head. She set it on the ground in front of her and began working the hair around its place into a series of small braids. Once she was done, she picked up the spool and twisted the braids around it, clamping the small latch at its end into place over them.
+
+"Now this one," Niamh said, pushing one of the sprockets into Aoife's palm. Again, she guided her fingers. "Here. At the back."
+
+Aoife set down the sprocket and again her fingers sprang to work. It was quick, easy work. She wondered at it, sometimes, the ease with which her fingers wove through her daughter's hair, when her own seemed so determined to fight her. But she counted it as a blessing from Kolif'rem. As all the bodies of his followers, a gift, and this one with perfect, cooperative hair. She wove the strands into a thick braid, and twisted it into a tight, careful knot. As with every blessing from her god, Aoife tried not to dwell on it too much. Her fingers found the sprocket on the ground, and she pushed the hole at its center over the knotted braid. It was a beautiful sprocket, spellwoven in pure ruby, with teeth that curled slightly into a sharp point, giving it the shape of an ornate, Crescian sun. It had been a gift, given to her by a kind stranger when she was a girl. Aoife braided the rest of the hair that surrounded it, wrapping it around the sprocket and pushing the teeth through the braids until the ruby tips of that sun poked out through Niamh's orange hair. The effect, she knew, would be beautiful -- glinting ruby red, dancing firelike in the light from Aoife's own hair. 
+
+"And this one," Niamh said, before Aoife had time to admire her work. She pushed one last spool into Aoife's hand. "For the left."
+
+Aoife got to work, running her fingers through Niamh's hair, separating it into yet more braids, letting her mind wander. 
+
+"You know, in Isseria, the men keep their hair short," she said absently. "Like to here." She tightened her fingers around a twist of Niamh's hair, holding it out only an inch from her head. 
+
+Niamh let out a horrified gasp. "They *cut* it? Doesn't that make Kolif... Kolfi'rem angry?"
+
+Aoife bit her lip, and went back to braiding. "Of course it does, sweetheart. But in other countries, they don't give Kolif'rem the worship he deserves. They believe he is only equal to the other six gods. They don't know he towers above them. That's why Kolif'rem blesses Escher so much, with technology and power and..." she trailed off. Had she really been about to preach to her five-year-old about Escher's *martial supremacy?* 
+
+"And fyreborn, like you?" Niamh offered instead.
+
+Aoife swallowed. "And fyreborn like me."
+
+The silence that followed lasted for several minutes while Aoife's fingers worked her daughter's hair into the myriad of tiny braids the last spool required. Finally, she pressed the spool to Niamh's head and began twisting them around it.
+
+"Was Kolif'rem angry with me?" Niamh asked, uncharacteristically sullen and serious. "Is that why I'm not fyreborn like you?"
+
+Aoife breathed sharply, resisting the urge to open her eyes. "Of course not, Niamh," she said, making the last few twists of Niamh's braids around the spool. "You are perfect. Kolif'rem created you perfectly, as he does all people."
+
+"But--"
+
+"Kolif'rem designed you with a different life in mind than he designed me," Aoife said, doing her best to sound authoritative. "He designed you to take your father's place, in the House of Lords." She smiled, then. "If I sat on one of the thrones there, I'm pretty sure it would break, or catch on fire."
+
+Niamh giggled. "I guess so," she said, uncertainly. "But... I think you're pretty."
+
+Aoife laughed then, laughed so hard she had to force her shoulders to stop heaving before it turned into sobs. 
+
+"What's so funny?" Niamh demanded.
+
+"Niamh," Aoife said, picking her daughter up and setting her safely away from the mirror, where she could look at her without hurting her. Then she opened her eyes, and shielded her daughter's eyes with her hand, the closest substitute she had found for stern eye contact. "How old are you?"
+
+Niamh laughed. "I'm five," she declared proudly. 
+
+"And you're the prettiest five-year-old there ever was. It's true. Kolif'rem told me himself."
+
+Niamh shrieked. "No he didn't!"
+
+Aoife laughed, letting her hand fall to her side as she looked away from her daughter. "It's true. I swear upon the hottest fire."
+
+Niamh laughed. "That's no good. Even the hottest fire couldn't burn you, Mommy."
+
+Aoife grinned. "You don't know that. Where Kolif'rem sleeps, that's the hottest fire there ever was. Hot enough to melt stone."
+
+Niamh brushed her fingers against Aoife's arm in the gesture that replaced a raised eyebrow. "Okay, Mommy," she said slowly. "I guess I have to believe you, since you're chosen by God."
+
+"That's right."
+
+Niamh paused a moment. 
+
+"Okay. I'm gonna go show Miss Edda my hair!"
+
+Aoife smiled. "Alright. You do that." She turned to watch as Niamh sprinted off, slamming open the door and leaving it slightly awry as her little footsteps pounded off into the hall. Then Aoife sighed, turned to face the mirror once more, and reached back to release her own hair from the cord that tied it away. Her fingers got back to work at her braids as she tried, unsuccessfully, to keep an empty mind.
