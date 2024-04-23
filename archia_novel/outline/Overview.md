@@ -1,3 +1,2 @@
-### Chapter One: \[Kindling? Sunrise?]
-[[intro_morning|Aoife struggles through her morning routine.]]
-
+### Chapter 1: \[Kindling? Sunrise?]
+[[intro_morning]]
