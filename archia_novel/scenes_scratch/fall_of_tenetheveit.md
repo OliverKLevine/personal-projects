@@ -1,10 +1,10 @@
 ---
-Previous scene: 
-Next scene: 
 Chapter: 1
 Characters:
   - "[[Aoife Blackwood|Aoife]]"
-Short description:
+Short description: 
+Next scene: 
+Previous scene:
 ---
 The first time Aoife felt a world end, it wasn’t her own. It stung anyway -- and not just the bitter cold that slammed into her until she felt her bones going brittle and her skin crack. She fell to her knees and screamed, the air in her lungs suddenly too heavy to form a proper prayer. All around her similar cries streamed out of desperate people, but they were silenced as quickly as they came. Aoife watched a woman reach for her throat as frost formed over her skin. She tried to claw at it but her fingers cracked when she tried to bend them. The woman looked up at Aoife then, eyes wide, tears crystallizing in them before they could escape. All Aoife could do for her was share in her horror as she died. 
 

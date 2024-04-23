@@ -1,12 +1,12 @@
 ---
-Previous scene: 
-Next scene: 
 Chapter: 1
 Characters:
   - "[[Aoife Blackwood|Aoife]]"
   - "[[Niamh Blackwood|Niamh]]"
   - "[[Edda]]"
 Short description: test description
+Next scene: 
+Previous scene:
 ---
 Aoife believed her body was perfect and sacred. Or, she tried to. It had the color, sheen, and weight of obsidian. She had to be careful where she stepped; a stray footfall could break a child's bones. But in a way that was a kind of power, power her god, the revered Kolif'rem, had intended for her. 
 

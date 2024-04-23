@@ -1,7 +1,7 @@
 ---
-Previous scene: 
-Next scene: 
 Chapter: 
 Characters: 
 Short description: 
+Next scene: 
+Previous scene:
 ---
