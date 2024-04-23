@@ -82,9 +82,11 @@ class Scene:
         if "canonical" in self.file: self.canonical = True
         else: self.canonical = False
         self.word_count = count(self.text)
-        if self.short_description.strip():
-            self.description_link = f"[[{self.name}|{self.short_description.strip()}]]"
-        else: self.description_link = self.link
+        self.short_description = self.short_description.strip()
+        if self.short_description:
+            if self.short_description[0] == '"': self.short_description = self.short_description[1:-1]
+            self.description_link = f"- [[{self.name}|{self.short_description}]]"
+        else: self.description_link = f"- {self.link}"
     
     def search(self):
         self.find_characters()
