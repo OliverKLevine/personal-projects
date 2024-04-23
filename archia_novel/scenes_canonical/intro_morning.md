@@ -1,3 +1,13 @@
+---
+Previous scene: 
+Next scene: 
+Chapter: 1
+Characters:
+  - "[[Aoife Blackwood|Aoife]]"
+  - "[[Niamh Blackwood|Niamh]]"
+  - "[[Edda]]"
+Short description: test description
+---
 Aoife believed her body was perfect and sacred. Or, she tried to. It had the color, sheen, and weight of obsidian. She had to be careful where she stepped; a stray footfall could break a child's bones. But in a way that was a kind of power, power her god, the revered Kolif'rem, had intended for her. 
 
 Her eyes held the concentrated light of the sun; no one could look into them for more than a moment without being blinded. It felt lonely sometimes. But when the loneliness crept in, Aoife had but to remind herself that it was all as Kolif'rem intended. She blazed too brightly to fall in among lesser people. She was set apart, anointed to a holier path by Kolif'rem himself. That made sense, didn't it? 

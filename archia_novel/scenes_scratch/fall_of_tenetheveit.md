@@ -1,3 +1,11 @@
+---
+Previous scene: 
+Next scene: 
+Chapter: 1
+Characters:
+  - "[[Aoife Blackwood|Aoife]]"
+Short description:
+---
 The first time Aoife felt a world end, it wasn’t her own. It stung anyway -- and not just the bitter cold that slammed into her until she felt her bones going brittle and her skin crack. She fell to her knees and screamed, the air in her lungs suddenly too heavy to form a proper prayer. All around her similar cries streamed out of desperate people, but they were silenced as quickly as they came. Aoife watched a woman reach for her throat as frost formed over her skin. She tried to claw at it but her fingers cracked when she tried to bend them. The woman looked up at Aoife then, eyes wide, tears crystallizing in them before they could escape. All Aoife could do for her was share in her horror as she died. 
 
 Aoife had never felt the cold before -- not just like this, but at all. It was the bitterest thing she had ever experienced. It burned her -- *smothered* her -- but with a start, she realized she was still screaming, even after all the other cries had died. The orange-red glow of her hair had faded to an ashen grey, but magma still flowed in her veins. Not for long though. She had to do something, say something, to save at least her own life. She steeled herself and finally forced herself to bend the scream into something closer to a prayer. 
