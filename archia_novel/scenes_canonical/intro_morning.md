@@ -5,8 +5,8 @@ Characters:
   - "[[Niamh Blackwood|Niamh]]"
   - "[[Edda]]"
 Short description: "Introduction: Aoife's morning routine, managing her own hair as well as her daughters. This scene reveals that Aoife is a cleric of Kolif'rem (but there are seeds of doubt), and that Aoife is pregnant (and scared about it)."
-Next scene: 
-Previous scene:
+Next scene: "[[pregnancy_talk]]"
+Previous scene: n/a
 ---
 Aoife believed her body was perfect and sacred. Or, she tried to. It had the color, sheen, and weight of obsidian. She had to be careful where she stepped; a stray footfall could break a child's bones. But in a way that was a kind of power, power her god, the revered Kolif'rem, had intended for her. 
 
