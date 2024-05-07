@@ -5,13 +5,13 @@ import sys
 
 def count(text):
     lowercase = set(string.ascii_lowercase)
-    words = [word for word in re.sub('([!?";:\/\-\,\.])'," ",text.replace("*","")).split() if len(set(word.lower()).intersection(lowercase)) > 0]
+    words = [word for word in re.sub('([!?";:\\/\\-\\,\\.])'," ",text.replace("*","")).split() if len(set(word.lower()).intersection(lowercase)) > 0]
     return len(words)
 
 
 def propertize(text):
     
-    text = re.sub('(\*\(\))',"",text.lower()).strip().split()
+    text = re.sub('(\\*\\(\\))',"",text.lower()).strip().split()
 
     words_to_remove = ["and"]
     text = [word for word in text if not word in words_to_remove]

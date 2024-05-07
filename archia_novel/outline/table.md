@@ -1,6 +1,6 @@
 | Chapter | Title   | Scenes                                | Characters                                                                                     | Word Count |
 | :-----: | ------- | ------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------- |
-|    1    | Sonrise | [[intro_morning]], [[pregnancy_talk]] | [[Aoife Blackwood\|Aoife]], [[Edda]], [[Marlow Blackwood\|Marlow]], [[Niamh Blackwood\|Niamh]] | 2609       |
+|    1    | Sonrise | [[intro_morning]], [[pregnancy_talk]] | [[Aoife Blackwood\|Aoife]], [[Edda]], [[Marlow Blackwood\|Marlow]], [[Niamh Blackwood\|Niamh]] | 2987       |
 |    2    |         |                                       |                                                                                                |            |
 |    3    |         |                                       |                                                                                                |            |
 |    4    |         |                                       |                                                                                                |            |
