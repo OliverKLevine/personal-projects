@@ -1,4 +1,5 @@
 use <card_holder.scad>
+use <olivers_shapes.scad>
 $fa = 1;
 $fs = 0.4;
 module base(length=60,width=40,thickness=2,max_angle=30) {
@@ -32,30 +33,35 @@ module stackable_box_lid(length=60,width=40,thickness=2,tolerance=0.5, max_angle
         base(length,width,thickness,max_angle);
     };
 };
-module stackable_box(length=60,width=40,height=30,thickness=2,tolerance=0.5,bottom=false, max_angle=30) {
+module stackable_box(length=60,width=40,height=30,thickness=2,tolerance=0.5,bottom=false,top=false, max_angle=30) {
+    full_height = bottom ? height : height - thickness;
     difference() {
         union() {
-            cube([width,length,thickness]);
             if (!bottom) { base(length=length,width=width,thickness=thickness,max_angle=max_angle); }
-            cube([width,thickness,height]);
-            cube([thickness,length,height]);
-            translate([0,length-thickness,0]) cube([width,thickness,height]);
-            translate([width-thickness,0,0]) cube([thickness,length,height]);
+            else {cube([width,length,thickness]);}
+            cube([width,thickness,full_height]);
+            cube([thickness,length,full_height]);
+            translate([0,length-thickness,0]) cube([width,thickness,full_height]);
+            translate([width-thickness,0,0]) cube([thickness,length,full_height]);
         };
-        translate([0,0,height]) base(length=length,width=width,thickness=thickness,max_angle=max_angle);
+        if(!top) {translate([0,0,full_height]) base(length=length,width=width,thickness=thickness,max_angle=max_angle);};
+    };
+};
+module stackable_circle_holder(width=40,length=60,height=30,d=30,thickness=2,top=false) {
+    union () {
+        stackable_box(width=width, length=length, height=height,top=top);
+        difference() {
+            union() {
+                cube([width,length,d/2]);
+                triangle_height=height-d/2-2*thickness;
+                triangle_width=(length-d-2*thickness)/2;
+                translate([0,thickness,d/2]) linear_extrude(height=triangle_height,scale=[1,0])  square(size=[width,triangle_width]);
+                rotate([0,0,180]) translate([-width,-length+thickness,d/2]) linear_extrude(height=triangle_height,scale=[1,0])  square(size=[width,triangle_width]);
+            };
+            translate([thickness + 0.001,length/2,d/2]) rotate([0,90,0]) cylinder(h=width-2*thickness-0.002,d=d);
+        };
     };
 };
 
 
 
-// Critter pieces box (x10)
-//stackable_box(width=58, length=67.5, height=15);
-
-// Special event card & forest card boxes (x2)
-//card_holder(card_width=46, card_height=65, height=28, stackable=true);
-
-// Card holders for expansion cards (x1)
-//card_holder(card_width=46, card_height=65, height=15, stackable=true); 
-card_holder(card_width=46, card_height=65, height=11, stackable=true);
-
-//base(thickness=2);

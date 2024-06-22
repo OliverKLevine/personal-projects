@@ -22,13 +22,14 @@ module card_holder(card_width=64,card_height=89,thickness=2,height=40,slot_width
     card_width=card_width+2*tolerance;
     base_height=2*thickness+card_height;
     base_width=2*thickness+card_width;
-    full_height=thickness+height;
+    full_height = stackable ? height - thickness : height;
     union() {
         difference() {
             union() {
                 //base
-                cube([base_height,base_width,thickness]);
+                
                 if (stackable) { base(length=base_width,width=base_height,thickness=thickness,max_angle=max_angle); }
+                else {cube([base_height,base_width,thickness]);}
                 //width walls
                 cube([thickness,base_width,full_height]);
                 translate([base_height-thickness,0,0]) cube([thickness,base_width,full_height]);
@@ -52,5 +53,5 @@ module card_holder(card_width=64,card_height=89,thickness=2,height=40,slot_width
         };
     };
 };
-card_holder();
+card_holder(height=20,stackable=true);
 //slot(width=20,deph=20,thickness=2,height=30);
